@@ -4,7 +4,6 @@ pipeline {
   }
   tools {
     maven 'maven3.8.2'
-    jdk 'JDK8'
   }
   environment {
 	VIRTUOSO_URL = 'qa.myapp.com'
