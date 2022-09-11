@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {windows slave}
 
     stages {
         stage('Clone Repo') {
