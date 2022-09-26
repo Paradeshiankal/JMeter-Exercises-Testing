@@ -1,5 +1,8 @@
 pipeline {
-    agent {windowslave}
+    agent = windowslave
+    options {
+        timestamps()
+    }
 
     stages {
         stage('Clone Repo') {
