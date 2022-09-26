@@ -1,27 +1,10 @@
 pipeline {
-    agent { labels "windowslave" }
-    options {
-        timestamps()
-    }
-
+    agent = "windowslave"
     stages {
-        stage('Clone Repo') {
+        stage('Clonning the repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/Paradeshiankal/JMeter-Exercises-Testing.git'
-            }
-        }
-        stage('Execute JMeter') {
-            steps {
-            bat """
-                'C:\\Users\\aparadeshi\\Downloads\\apache-jmeter-5.5\\apache-jmeter-5.5\\bin\\jmeter.bat -n -t "Test Plans\\PetStore-End-to-End-Flow.jmx" -p "Test Plans\\data\\PetStore_LoadTest.properties" -JTOTAL_THREADS=2 -JTEST_DURATION=60 -l MyRun1.jtl'
-            
-            }
-        }
-        stage('Publish Report') {
-            steps {
-            
-                perfReport filterRegex: '', sourceDataFiles: '**/*.jtl'
-            
+                echo "To call username use "
+                echo "To call password use "
             }
         }
     }
