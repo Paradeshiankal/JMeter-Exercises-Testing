@@ -1,5 +1,5 @@
 pipeline {
-    agent = "windowslave"
+    agent {label 'windowslave'}
     stages {
         stage('Clonning the repo') {
             steps {
